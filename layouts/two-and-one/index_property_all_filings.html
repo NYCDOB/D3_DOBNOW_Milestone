@@ -1382,6 +1382,12 @@ body {
 						d3.select("#summary14").html("");
 						d3.select("#summary15").html("");
 					}
+				
+				if (!!jobSignOffDate_txt){
+						d3.select("#summary10").html("  (" + dateFormat(jobSignOffDateFormat) +")");
+					} else {
+						d3.select("#summary10").html("");
+					}
 			
 			}
 			
@@ -1455,7 +1461,13 @@ body {
 					} else {
 						d3.select("#summary14").html("");
 						d3.select("#summary15").html("");
-					}			
+					}	
+				
+				if (!!jobSignOffDate_txt){
+						d3.select("#summary10").html("  (" + dateFormat(jobSignOffDateFormat) +")");
+					} else {
+						d3.select("#summary10").html("");
+					}
 			}
 			
 			function sPlan_Obj_objStatus(){
@@ -1560,7 +1572,13 @@ body {
 					} else {
 						d3.select("#summary14").html("");
 						d3.select("#summary15").html("");
-					}					
+					}	
+				
+				if (!!jobSignOffDate_txt){
+						d3.select("#summary10").html("  (" + dateFormat(jobSignOffDateFormat) +")");
+					} else {
+						d3.select("#summary10").html("");
+					}
 			}
 			
 			function pCert_Fail_failStatus(){
@@ -1657,6 +1675,12 @@ body {
 					} else {
 						d3.select("#summary14").html("");
 						d3.select("#summary15").html("");
+					}
+				
+				if (!!jobSignOffDate_txt){
+						d3.select("#summary10").html("  (" + dateFormat(jobSignOffDateFormat) +")");
+					} else {
+						d3.select("#summary10").html("");
 					}
 			}
 			
@@ -1764,6 +1788,12 @@ body {
 						d3.select("#summary14").html("");
 						d3.select("#summary15").html("");
 					}
+				
+				if (!!jobSignOffDate_txt){
+						d3.select("#summary10").html("  (" + dateFormat(jobSignOffDateFormat) +")");
+					} else {
+						d3.select("#summary10").html("");
+					}
 			}
 			
 			function pCert_Fail_othStatus(){
@@ -1860,6 +1890,12 @@ body {
 					} else {
 						d3.select("#summary14").html("");
 						d3.select("#summary15").html("");
+					}
+				
+				if (!!jobSignOffDate_txt){
+						d3.select("#summary10").html("  (" + dateFormat(jobSignOffDateFormat) +")");
+					} else {
+						d3.select("#summary10").html("");
 					}
 			}
 
