@@ -1,106 +1,64 @@
-# Dashboards by Keen IO
+## DOB NOW: Build Milestones
 
-Building an analytics dashboard? Don’t start from scratch. Grab one of our Bootstrap-based templates and admire your data in minutes.
+The New York City Department of Buildings (DOB) DOB NOW Build Milestones application displays basic details for selected DOB NOW Build filings on an interactive map of New York City. Each filing is represented as a dot on the map, and clicking the dot or the item on the list below brings you to a profile page that shows major milestone dates for that filing. The application is updated daily with the latest filings for Antenna, Curb Cut, Fence, Plumbing, Scaffold, Sidewalk Shed, Sign, Sprinkler, and Standpipe filings in DOB NOW.
 
-Begin with a layout:
+![Milestone Map Page](https://github.com/cnicklin/D3_DOBNOW_Milestone/blob/gh-pages/MapPage.PNG)
 
-![Hero Thirds Example](http://cl.ly/image/3v2H180U0k0Q/Screen%20Shot%202014-10-29%20at%203.12.24%20AM.png)
+## Data Source
 
-Add charts to each `chart-stage` HTML element:
+Data flows from the BI tool to GitHub public hold. This is a daily automated process. It creates results in 2 formats: JSON (for search) and CSV (for map imaging).
 
-``` html
-<div class="col-sm-6 col-md-3">
-  <div class="chart-wrapper">
-    <div class="chart-title">
-      Chart Title
-    </div>
-    <div class="chart-stage">
-      <div id="grid-1-1">
-        <!-- chart goes here! -->
-      </div>
-    </div>
-    <div class="chart-notes">
-      Notes about this chart (optional)
-    </div>
-  </div>
-</div>
-```
+<img align="center" width="" height="" src="https://github.com/cnicklin/D3_DOBNOW_Milestone/blob/gh-pages/Flow.PNG" alt="Milestone App Flow Diagram">
 
-And voilà!
+## Data Definitions
+Definitions for elements on the Profile Page are listed below, but can also be viewed by hovering over the field name on the webpage.
 
-![Sample Dashboard](http://cl.ly/image/1T3a0X402r0W/Screen%20Shot%202014-10-29%20at%203.35.04%20AM.png)
+### Profile Page
 
-An attractive, custom analytics dashboard that's ready to be shown to your team or your customers. No hours lost tweaking CSS or testing responsiveness on eight different mobile devices.
+| Field Name | Definition |
+|-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Job Number | The unique ID number assigned when the applicant submits the filing to the Department of Buildings. |
+| BIN Number | The Building Identification Number assigned by the Department of City Planning. |
+| Work Type | The type of work described in this filing. It could include plumbing, sprinkler, construction fence, or another type of work. |
+| Job Type | This indicates the extent of the work being done. NB means a new building is being built. A1 means that extensive alterations will be done resulting in a change of building occupancy. A2 means that alterations will be done but will not result in a change of building occupancy. A3 indicates that minor alterations will be done. |
+| Professional Certification | Yes indicates that the applicant is certifying that the work being performed complies with all applicable laws and codes. This job will then skip review by a plan examiner. |
+| Filing Status | The current status of the filing. A definition for each of the values for Filing Status can be found on our [Status Glossary](https://github.com/cnicklin/D3_DOBNOW_Milestone/blob/gh-pages/Statuses.md). |
+| Number of Resubmissions | During review, the Department of Buildings may return a filing to the applicant multiple times because the information is incomplete, because it needs correction, or another reason. This indicates the total number of times the filing was resubmitted, and does not include the initial submission. |
+| Job Description | The general description of the work being applied for. This field is free text, and is filled out by the applicant. |
 
-## The Templates
+### Milestone Dates
 
-These layout templates are composed of a minimal set of [Bootstrap v3.2](http://getbootstrap.com/) custom styles. They cover the most common use cases and layout configurations we've encountered so far.
+| Field Name | Definition |
+|-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Filing Date | The date that the applicant submitted the filing to the Department of Buildings. |
+| CPE Assigned Date | The date that the filing was assigned to a Chief Plan Examiner for review or for delegation to a Plan Examiner. |
+| CPE Action Date | The date that the Chief Plan Examiner took action on the filing. |
+| PE Assigned Date | The date that the filing was assigned to a Plan Examiner. |
+| First Objection Date | The date that the filing was first returned to the applicant with objections. A filing may go through several cycles of being submitted, reviewed by a Plan Examiner, and returned to the applicant with objections. A filing may never receive objections and therefore may skip this milestone date. |
+| Latest Objection Date | The most recent date that the filing was returned to the applicant with objections. A filing may never receive objections and therefore may skip this milestone date. |
+| Latest Resubmit Date | The most recent date that the filing was resubmitted to the Department of Buildings for review. A filing may never be sent back to the applicant and therefore may skip this milestone date. |
+| QA Supervisor Assigned Date | The date that the filing was assigned to a QA Supervisor for review or for delegation to a QA Admin. |
+| QA Admin Assigned Date | The date that the filing was assigned to a QA Admin. |
+| Initial QA Failed Date | The first date that the filing was returned to the applicant because it was incomplete or needed correction. A filing can fail QA multiple times, or it may be approved on the first review and skip this milestone date. |
+| Plan Approved Date | The date that the filing was approved. The applicant can now pull permits. |
+| Initial Permit Issued Date | The first date that a permit was issued. Multiple permits can be issued for a job filing. |
+| Latest Permit Expiration Date | The expiration date for the most recent permit. Multiple permits can be issued for a job filing. |
+| Permit Signed Off Date | The date that the Department of Buildings signed off that the work was completed. |
 
-* [Layouts](http://keen.github.io/dashboards/layouts/) for pre-built, responsive dashboard views
-* [Examples](http://keen.github.io/dashboards/examples/) for specific domains, data models and popular integrations
+## Built With
 
-## Integrations
+* [R](https://www.r-project.org/)
+    + Core packages(dplyr, tidyr, RJDBC, ...)
+* [Carto VL](https://carto.com/developers/carto-vl/)
+* [Mapbox GL](https://www.mapbox.com/mapbox-gl-js/api/)
+* [D3](https://d3js.org/)
+* [Bootstrap](https://getbootstrap.com/)
 
-These templates can work with any data source or charting library, but they're particularly streamlined to work with Keen IO's [visualization toolkit](https://github.com/keenlabs/keen-js). To see the Keen integration in action, create a [free project](http://keen.io/signup?s=gh-dashboards) and send some data to it. Then add some charts to your dashboard with just a few lines of code.
+## Built by
 
-You can also use this pre-populated set of [demo data](https://github.com/keen/dashboards/tree/gh-pages/demo-data). 
+* [DOB Analytics and Data Science Team](https://www1.nyc.gov/site/buildings/about/metrics-reports.page) - If you have questions or feedback, comment here on github or email us at [Analytics@buildings.nyc.gov](mailto:analytics@buildings.nyc.gov). (Note: We're hiring a [web developer](https://nycdob.github.io/Jobs/Web_Developer.html)!)
 
-## Usage
+## Acknowledgments
 
-Ready to use one of these awesome layouts? Here's how to get started.
+* Inspired by [NYC Planning Labs](https://planninglabs.nyc/)
 
-1. Download a copy of this repository as a zip file, using [this link](https://github.com/keen/dashboards/archive/gh-pages.zip). You can also type `git clone keen/dashboards` in your terminal.
-
-2. Check out the various [layouts](http://keen.github.io/dashboards/layouts/) and pick the one that best suits your needs. Find the template in the repository you downloaded at `folder/layouts/(name-of-template)`.
-
-3. Start editing! In the destination folder will exist an `.html` file. Open it in your favorite text editor. There are three things you need to do to edit your dashboard:
-  1. Setup: If you're a registered Keen IO user, navigate to [your keen project](http://keen.io/login?s=gh-dashboards) or if you don't have a user at first, you can simply use some demo data that we've prepared for you. You can access those by going to the repository and navigating to demo-data. There, you will see some javascript files with some code in them. We will simply paste those in the .html file.
-  2. Some copypasta. When you navigate to the bottom of the .html file, you can see that there are a bunch of script tags. Just before the end of the body tag, we're going to add in the code from sample.html. Simply copy and paste the code just before you see ```</body>```.
-  3. Once you've done that we need to hook up the specific items within the template to the code that we've just pasted in to our file. In line 21 of sample.html, you will see a line of code: ```document.getElementById('chart-01')```. That means that this *query* will try to find inside the html file a node with an id of 'chart-01'. In these templates, you will see lines of that resemble something like:
-  ```html
-  <div class="chart-stage"> <!-- This is where you need to put the id property in! -->
-    <img data-src="holder.js/100%x650/white">
-  </div>
-  ```
-  Now we're going to change those lines so that it looks like this:
-  ```html
-  <div class="chart-stage" id="chart-01"> <!-- This is where you need to put the id property in! -->
-    <!-- Get rid of that img tag! -->
-  </div>
-  ```
-
-You're finished! Congratulations on setting up your first chart! Repeat step three with the rest of the items in the template to complete your dashboard!
-
-## Contributing
-
-Contributions are 11,000,000% welcome! That's a lot!
-
-Please file issues for any bugs you find or features you'd like to see. And if you're up for it, send in a pull request.
-
-To develop, you'll need to first install dependencies using [Bower](http://bower.io/):
-
-```
-$ npm install -g bower
-$ bower install
-```
-
-Note: Updates to the site backed by the **gh-pages** branch go live immediately once pull requests are reviewed and approved.
-
-Note #2: This project is moving fast, so make sure and stay up to date. Here's what we suggest. Fork this repo, clone the fork, and add the original repo as a remote called `upstream`:
-
-```
-$ git clone https://github.com/username/dashboards.git
-$ cd dashboards
-$ git remote add upstream https://github.com/keen/dashboards.git
-```
-
-Pull from `upstream` frequently to keep your local copy up to date:
-
-```
-$ git pull upstream gh-pages
-```
-
-## Support
-
-Need a hand with something? Send us an email to [contact@keen.io](mailto:contact@keen.io) and we'll get back to you right away!
-For technical questions, use the [`keen-io`](https://stackoverflow.com/questions/tagged/keen-io) tag on Stack Overflow.
