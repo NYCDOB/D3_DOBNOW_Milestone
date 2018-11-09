@@ -74,6 +74,7 @@ Professional Certification Timelines
 * [Mapbox GL](https://www.mapbox.com/mapbox-gl-js/api/)
 * [D3](https://d3js.org/)
 * [Bootstrap](https://getbootstrap.com/)
+* Java 1.6 (Core, open proj4j by osgeo)
 
 ## Built by
 
