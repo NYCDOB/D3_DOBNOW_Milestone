@@ -281,6 +281,9 @@ function init(){
 		d3.selectAll(".sprinkler").style("display", "none");
 		d3.selectAll(".standpipe").style("display", "none");
 	});
+	map.on('resize', function(){
+		map.invalidateSize();
+	});
 }
 
 var antennaCheckbox = document.querySelector('input[id="antennaWT"]');
